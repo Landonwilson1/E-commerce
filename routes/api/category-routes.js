@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
   });
 });
-
+/*
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
@@ -45,5 +45,6 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
 });
-
+*/
 module.exports = router;
+
