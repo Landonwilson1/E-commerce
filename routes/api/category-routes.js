@@ -20,10 +20,25 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
   });
 });
-/*
+
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  // be sure to include its associated Products
+  Category.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: Product,
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      }
+    ]
+  })
+  .then(dbCategoryData => res.json(dbCategoryData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json('no user found with this ID');
+  })
 });
 
 router.post('/', (req, res) => {
@@ -35,16 +50,36 @@ router.post('/', (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
+  });
 });
 
 router.put('/:id', (req, res) => {
-  // update a category by its `id` value
+  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  Category.update(req.body, {   
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbCategoryData => res.json(dbCategoryData))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  Category.destroy({
+    where: {
+      id: req.params.id
+    }
+    })
+    .then(dbCategoryData => res.json(dbCategoryData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+  });
 });
-*/
+
 module.exports = router;
 
