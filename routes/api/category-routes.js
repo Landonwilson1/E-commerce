@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
   .catch(err => {
       console.log(err);
       res.status(500).json('no user found with this ID');
-  })
+  });
 });
 
 router.post('/', (req, res) => {
