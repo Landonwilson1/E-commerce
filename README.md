@@ -20,5 +20,3 @@
   If you have any questions reach out to me at: </br>
   Github: https://github.com/Landonwilson1 </br>
   Email: Landonjwilson1@gmail.com
-
-[Walkthrough](https://drive.google.com/file/d/166M6r7lwrOBLepK9kAuudMQYhv29j55g/view?usp=sharing)
